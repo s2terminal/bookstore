@@ -1,4 +1,4 @@
-import myText from './assets/static.mjs?raw';
+import myText from '../../bookmarklet/src/notranslate/dist.mjs?raw';
 
 export function App() {
   return (

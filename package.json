@@ -12,6 +12,7 @@
   "type": "commonjs",
   "workspaces": [
     "packages/web",
-    "packages/bookmarklet"
+    "packages/bookmarklet",
+    "packages/builder"
   ]
 }
