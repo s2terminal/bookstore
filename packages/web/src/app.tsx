@@ -1,0 +1,16 @@
+import myText from './assets/static.mjs?raw';
+
+export function App() {
+  return (
+    <>
+      <h1>Bookstore</h1>
+      <div>
+        <ul>
+          <li>
+            <a href={myText}>notranslate</a>
+          </li>
+        </ul>
+      </div>
+    </>
+  )
+}
