@@ -1,4 +1,8 @@
-import myText from '../../bookmarklet/src/notranslate/dist.mjs?raw';
+const bookmarklets = import.meta.glob(
+  '../../bookmarklet/src/*/bookmarklet.txt',
+  { eager: true, query: '?raw', import: 'default' }
+);
+
 
 export function App() {
   return (
@@ -6,9 +10,21 @@ export function App() {
       <h1>Bookstore</h1>
       <div>
         <ul>
-          <li>
-            <a href={myText}>notranslate</a>
-          </li>
+          {Object.keys(bookmarklets).map(key => {
+            const name = key.replace('../../bookmarklet/src/', '').replace('/bookmarklet.txt', '');
+            const bookmarklet = bookmarklets[key];
+            if (typeof bookmarklet !== 'string') {
+              console.error(`${name}のブックマークレットを読み込めませんでした`);
+              return null;
+            }
+            return (
+              <li key={key}>
+                <a href={bookmarklet} target="_blank" rel="noopener noreferrer">
+                  {name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>

@@ -6,7 +6,7 @@ const build = async (src: string, distDir: string, distFile: string) => {
     // 出力先ディレクトリがなければ作成
     await mkdir(distDir, { recursive: true });
 
-    // 読み込むファイルの一覧を取得
+    // 読み込むファイルを取得
     const sourceFile = await readFile(src);
     const content = `javascript: ${sourceFile}`;
 
@@ -19,4 +19,23 @@ const build = async (src: string, distDir: string, distFile: string) => {
   }
 };
 
-build('../bookmarklet/src/notranslate/src/index.js', '../bookmarklet/src/notranslate', 'dist.mjs');
+const main = async () => {
+  const bookmarkletPackage = '../bookmarklet/';
+  const buildSettings = [
+    {
+      src: 'noTranslate',
+    },
+    {
+      src: 'shortAmazon',
+    }
+  ];
+  buildSettings.forEach((setting) => {
+    build(
+      path.join(bookmarkletPackage, 'src', setting.src, 'src/index.js'),
+      path.join(bookmarkletPackage, 'src', setting.src),
+      'bookmarklet.txt'
+    );
+  });
+}
+
+main();
