@@ -1,0 +1,48 @@
+name: 静的ページのデプロイ
+
+on:
+  push:
+    branches: ['main']
+
+  # アクションタブから手動で実行できます
+  workflow_dispatch:
+
+# GitHub Pagesへのデプロイを許可するためにGITHUB_TOKEN権限を設定
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時デプロイは１つだけ
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  # デプロイするだけなので、単一のデプロイジョブ
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Nodeセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: 'npm'
+      - name: 依存関係インストール
+        run: npm ci
+      - name: ビルド
+        run: npm run build
+      - name: Pagesのセットアップ
+        uses: actions/configure-pages@v5
+      - name: アーティファクトのアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './packages/web/dist'
+      - name: GitHub Pagesへのデプロイ
+        id: deployment
+        uses: actions/deploy-pages@v4
