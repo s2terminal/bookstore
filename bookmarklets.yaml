@@ -14,3 +14,9 @@ bookmarklets:
   markdownShare:
     title: "Markdown共有"
     description: "現在のURLとタイトルをMarkdown形式のテキストで共有します。"
+  kaggleIframe:
+    title: "Kaggle Iframe"
+    description: "KaggleのNotebookのiframeの内容を別タブで開きます。"
+  kaggleNotranslate:
+    title: "Kaggle 翻訳無効化"
+    description: "iframeの中を開いたKaggleのNotebook内のコードを翻訳しないようにし、スクロールもできるよう表示を整えます。「Kaggle Iframe」の後に実行します。"

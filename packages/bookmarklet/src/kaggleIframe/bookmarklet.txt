@@ -1,0 +1,1 @@
+javascript: !function(e){window.open(e,"_blank")}(document.querySelector("iframe")?.getAttribute("src"));
