@@ -11,3 +11,6 @@ bookmarklets:
   deleteHeader:
     title: "ヘッダー削除"
     description: "ページのヘッダーを削除します。"
+  markdownShare:
+    title: "Markdown共有"
+    description: "現在のURLとタイトルをMarkdown形式のテキストで共有します。"

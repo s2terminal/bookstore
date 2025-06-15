@@ -1,0 +1,1 @@
+javascript: !function(t){navigator.share({text:`[${t.title}](${t.location.href})`})}(window.document);
