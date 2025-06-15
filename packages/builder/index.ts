@@ -8,7 +8,8 @@ const build = async (src: string, distDir: string, distFile: string) => {
 
     // 読み込むファイルを取得
     const sourceFile = await readFile(src);
-    const content = `javascript: ${sourceFile}`;
+    const script = sourceFile.toString().replace(/\r?\n/g, ''); // TODO: ここではなくminifyでやりたい
+    const content = `javascript: ${script}\n`;
 
     await writeFile(path.join(distDir, distFile), content);
 
