@@ -124,11 +124,11 @@ describe('shortAmazon ブックマークレット実行', () => {
 
     testCases.forEach(testCase => {
       window.location.href = testCase.input;
-      
+
       jest.isolateModules(() => {
         require('./index.js');
       });
-      
+
       expect(window.location.href).toBe(testCase.expected);
     });
   });

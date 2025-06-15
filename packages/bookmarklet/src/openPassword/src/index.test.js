@@ -19,7 +19,7 @@ describe('openPassword ブックマークレット実行', () => {
     `;
 
     const passwordField = document.querySelector('#password-field');
-    
+
     // 実行前にpassword型であることを確認
     expect(passwordField.getAttribute('type')).toBe('password');
 
@@ -30,10 +30,10 @@ describe('openPassword ブックマークレット実行', () => {
 
     // 3. 結果を検証
     expect(passwordField.getAttribute('type')).toBe('text');
-    
+
     // 値は変更されないことを確認
     expect(passwordField.value).toBe('秘密のパスワード');
-    
+
     // 他のinput要素は影響を受けないことを確認
     const textField = document.querySelector('input[type="text"]');
     expect(textField.getAttribute('type')).toBe('text');
@@ -77,7 +77,7 @@ describe('openPassword ブックマークレット実行', () => {
     const password1 = document.querySelector('#password1');
     const password2 = document.querySelector('#password2');
     const password3 = document.querySelector('#password3');
-    
+
     // 実行前にすべてpassword型であることを確認
     expect(password1.getAttribute('type')).toBe('password');
     expect(password2.getAttribute('type')).toBe('password');
@@ -105,7 +105,7 @@ describe('openPassword ブックマークレット実行', () => {
 
     const alreadyText = document.querySelector('#already-text');
     const stillPassword = document.querySelector('#still-password');
-    
+
     // 実行前の状態を確認
     expect(alreadyText.getAttribute('type')).toBe('text');
     expect(stillPassword.getAttribute('type')).toBe('password');

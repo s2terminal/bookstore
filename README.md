@@ -1,4 +1,7 @@
 # Bookstore
+
+[![Test Bookmarklets](https://github.com/s2terminal/bookstore/actions/workflows/test.yml/badge.svg)](https://github.com/s2terminal/bookstore/actions/workflows/test.yml)
+
 ブックマークレットをTypeScriptで記述してGit管理するためのリポジトリ。
 
 ## 起動方法

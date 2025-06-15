@@ -33,7 +33,7 @@ describe('deleteHeader ブックマークレット実行', () => {
 
     // 3. 結果を検証
     expect(document.querySelector('header')).toBeNull();
-    
+
     // 他の要素は影響を受けないことを確認
     expect(document.querySelector('main')).not.toBeNull();
     expect(document.querySelector('footer')).not.toBeNull();

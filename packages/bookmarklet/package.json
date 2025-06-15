@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "test": "npm run build && jest",
-    "test-coverage": "npm run build && jest --coverage"
+    "test:coverage": "npm run build && jest --coverage"
   },
   "dependencies": {
     "@types/node": "^24.0.0",
