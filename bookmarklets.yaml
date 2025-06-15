@@ -14,6 +14,9 @@ bookmarklets:
   markdownShare:
     title: "Markdown共有"
     description: "現在のURLとタイトルをMarkdown形式のテキストで共有します。"
+  selectionEdit:
+    title: "選択範囲ピックアップ"
+    description: "選択したテキストを編集可能なウィンドウに表示します。"
   kaggleIframe:
     title: "Kaggle Iframe"
     description: "KaggleのNotebookのiframeの内容を別タブで開きます。"
