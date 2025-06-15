@@ -3,7 +3,6 @@ const bookmarklets = import.meta.glob(
   { eager: true, query: '?raw', import: 'default' }
 );
 
-
 export function App() {
   return (
     <>

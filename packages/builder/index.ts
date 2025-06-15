@@ -2,6 +2,14 @@ import { readFile, writeFile, mkdir } from 'fs/promises';
 import * as path from 'path';
 import { minify_sync } from "terser";
 
+// TODO: 設定ファイルに出す
+const buildSettings = [
+  { src: 'noTranslate' },
+  { src: 'shortAmazon' },
+  { src: 'openPassword' },
+  { src: 'deleteHeader' },
+];
+
 const build = async (src: string, distDir: string, distFile: string) => {
   try {
     // 出力先ディレクトリがなければ作成
@@ -23,14 +31,6 @@ const build = async (src: string, distDir: string, distFile: string) => {
 
 const main = async () => {
   const bookmarkletPackage = '../bookmarklet/';
-  const buildSettings = [
-    {
-      src: 'noTranslate',
-    },
-    {
-      src: 'shortAmazon',
-    }
-  ];
   buildSettings.forEach((setting) => {
     build(
       path.join(bookmarkletPackage, 'src', setting.src, 'src/index.js'),
