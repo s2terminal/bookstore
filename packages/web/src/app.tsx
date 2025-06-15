@@ -7,7 +7,6 @@ const bookmarklets = import.meta.glob(
 export function App() {
   return (
     <>
-      <h1>Bookstore</h1>
       <div>
         <ul>
           {Object.keys(bookmarklets).map(key => {
