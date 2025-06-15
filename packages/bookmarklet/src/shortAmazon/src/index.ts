@@ -1,1 +1,10 @@
-const u = new URL(location.href);const a = u.pathname.split('/');u.pathname = a.slice(a.indexOf('dp')).join('/');u.search = "";u.pathname = u.pathname.replace(/\/ref=[a-zA-Z0-9\_]+/i, "");location.href = u.toString();
+(function (url: URL) {
+  url.pathname = (
+    (pathList: string[]) => pathList.slice(pathList.indexOf('dp')).join('/')
+  )(url.pathname.split('/'));
+  url.search = "";
+  url.pathname = url.pathname.replace(/\/ref=[a-zA-Z0-9\_]+/i, "");
+  location.href = url.toString();
+})(
+  new URL(location.href)
+);

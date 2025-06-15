@@ -1,5 +1,6 @@
 import { readFile, writeFile, mkdir } from 'fs/promises';
 import * as path from 'path';
+import { minify_sync } from "terser";
 
 const build = async (src: string, distDir: string, distFile: string) => {
   try {
@@ -8,7 +9,7 @@ const build = async (src: string, distDir: string, distFile: string) => {
 
     // 読み込むファイルを取得
     const sourceFile = await readFile(src);
-    const script = sourceFile.toString().replace(/\r?\n/g, ''); // TODO: ここではなくminifyでやりたい
+    const script = minify_sync(sourceFile.toString()).code;
     const content = `javascript: ${script}\n`;
 
     await writeFile(path.join(distDir, distFile), content);

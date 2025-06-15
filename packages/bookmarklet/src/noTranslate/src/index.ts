@@ -1,1 +1,3 @@
-document.querySelectorAll("pre").forEach(e => e.classList.add("notranslate"));
+document.querySelectorAll("pre").forEach(
+  e => e.classList.add("notranslate")
+);

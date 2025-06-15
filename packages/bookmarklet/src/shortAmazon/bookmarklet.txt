@@ -1,1 +1,1 @@
-javascript: const u = new URL(location.href);const a = u.pathname.split('/');u.pathname = a.slice(a.indexOf('dp')).join('/');u.search = "";u.pathname = u.pathname.replace(/\/ref=[a-zA-Z0-9\_]+/i, "");location.href = u.toString();
+javascript: !function(a){var e;a.pathname=(e=a.pathname.split("/")).slice(e.indexOf("dp")).join("/"),a.search="",a.pathname=a.pathname.replace(/\/ref=[a-zA-Z0-9\_]+/i,""),location.href=a.toString()}(new URL(location.href));
