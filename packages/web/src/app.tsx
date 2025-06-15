@@ -3,6 +3,9 @@ const bookmarklets = import.meta.glob(
   { eager: true, query: '?raw', import: 'default' }
 );
 
+// @ts-ignore
+import settings from '../../../bookmarklets.yaml';
+
 export function App() {
   return (
     <>
@@ -15,11 +18,16 @@ export function App() {
               console.error(`${name}のブックマークレットを読み込めませんでした`);
               return null;
             }
+            const setting = settings["bookmarklets"][name];
+            if (!setting) {
+              console.error(`${name}の設定が見つかりません`);
+              return null;
+            }
             return (
               <li key={key}>
                 <a href={bookmarklet} target="_blank" rel="noopener noreferrer">
-                  {name}
-                </a>
+                  {setting["title"] || name}
+                </a>: <span>{setting["description"]}</span>
               </li>
             );
           })}

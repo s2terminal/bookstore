@@ -1,0 +1,13 @@
+bookmarklets:
+  noTranslate:
+    title: "コード翻訳無効化"
+    description: "<pre>タグ内のコードを翻訳しないようにします。"
+  shortAmazon:
+    title: "Amazon短縮"
+    description: "AmazonのURLを短縮します。"
+  openPassword:
+    title: "パス表示"
+    description: "パスワード入力欄をテキスト表示に切り替えます。"
+  deleteHeader:
+    title: "ヘッダー削除"
+    description: "ページのヘッダーを削除します。"

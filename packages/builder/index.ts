@@ -1,14 +1,8 @@
-import { readFile, writeFile, mkdir } from 'fs/promises';
 import * as path from 'path';
+import * as fs from 'fs';
+import { readFile, writeFile, mkdir } from 'fs/promises';
 import { minify_sync } from "terser";
-
-// TODO: 設定ファイルに出す
-const buildSettings = [
-  { src: 'noTranslate' },
-  { src: 'shortAmazon' },
-  { src: 'openPassword' },
-  { src: 'deleteHeader' },
-];
+import * as yaml from 'js-yaml';
 
 const build = async (src: string, distDir: string, distFile: string) => {
   try {
@@ -31,10 +25,15 @@ const build = async (src: string, distDir: string, distFile: string) => {
 
 const main = async () => {
   const bookmarkletPackage = '../bookmarklet/';
-  buildSettings.forEach((setting) => {
+  const yamlContent = fs.readFileSync('../../bookmarklets.yaml', "utf8");
+  const settings =  await yaml.load(yamlContent) as { bookmarklets: Record<string, never> };
+  console.log('📄 設定', settings);
+
+  Object.keys(settings["bookmarklets"]).forEach((key) => {
+    console.log(`📦 ビルド中: ${key}`);
     build(
-      path.join(bookmarkletPackage, 'src', setting.src, 'src/index.js'),
-      path.join(bookmarkletPackage, 'src', setting.src),
+      path.join(bookmarkletPackage, 'src', key, 'src/index.js'),
+      path.join(bookmarkletPackage, 'src', key),
       'bookmarklet.txt'
     );
   });

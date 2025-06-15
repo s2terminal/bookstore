@@ -11,8 +11,10 @@
     "preact": "^10.26.5"
   },
   "devDependencies": {
+    "@modyfi/vite-plugin-yaml": "^1.1.1",
     "@preact/preset-vite": "^2.10.1",
     "@types/node": "^24.0.0",
+    "js-yaml": "^3.14.1",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
   }
