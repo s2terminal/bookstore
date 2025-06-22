@@ -3,4 +3,4 @@ description:
 globs: 
 alwaysApply: true
 ---
-[README.md](../README.md)を読んでから作業を始めてください。
+[README.md](README.md)を読んでから作業を始めてください。
