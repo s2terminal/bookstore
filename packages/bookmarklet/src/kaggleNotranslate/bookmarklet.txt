@@ -1,1 +1,1 @@
-javascript: document.querySelectorAll(".input").forEach((e=>e.classList.add("notranslate"))),document.querySelectorAll(".output_wrapper").forEach((e=>e.classList.add("notranslate"))),document.querySelectorAll("body").forEach((e=>e.style.overflowY="visible"));
+javascript: document.querySelectorAll(".input").forEach(e=>e.classList.add("notranslate")),document.querySelectorAll(".output_wrapper").forEach(e=>e.classList.add("notranslate")),document.querySelectorAll("body").forEach(e=>e.style.overflowY="visible");
