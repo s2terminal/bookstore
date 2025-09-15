@@ -23,3 +23,6 @@ bookmarklets:
   kaggleNotranslate:
     title: "Kaggle 翻訳無効化"
     description: "iframeの中を開いたKaggleのNotebook内のコードを翻訳しないようにし、スクロールもできるよう表示を整えます。「Kaggle Iframe」の後に実行します。"
+  connpassOsaka:
+    title: "connpass大阪イベント"
+    description: "connpassの大阪のイベント一覧を表示します。"
